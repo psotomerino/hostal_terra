@@ -52,7 +52,12 @@
 
     </div>
 
-   <div class="contenedor mt-4">    
+   <div class="contenedor mt-4"> 
+   <div><select name="status_R" id="status_R">
+        <option value="Inicio">Inicio</option>
+        <option value="Inicio">Proceso</option>
+        <option value="Inicio">Finalizado</option>
+   </select></div>   
     <table id="table_insi" class="table table-bordered table-hover table-striped">
        <thead class="thead-light">
            <tr>
