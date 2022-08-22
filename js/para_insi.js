@@ -94,59 +94,7 @@ $(document).on('click','#envio_inci',function (e){
         });
 });
 //********* CRUD INSIDENCIAS**********
-function lista_insidencias(){
-        $.ajax({
-          url: '../../backend/crud_insidencias.php',
-          type: 'POST',
-          /*beforeSend: function(){
-                        document.getElementById("loading_full").style.display="block";
-                        document.getElementById("loading_full").innerHTML="<img id='img_lo' src='../../imagenes/loding_1.gif' width='300' height='300'>"; 
-                    }, */  
-          
-        })
-        .done(function(listas_insidencias){
-        //document.getElementById("loading_full").style.display="none";   
-        //alert (listas_usuarios);   
-        var i = 1;  
-        var listas = JSON.parse(listas_insidencias);       
-        var template='';
-        var template_1='';
-        listas.forEach(lista =>{
-              
-                template+= `
-                <tr elmentoid="${lista.id_usuariops}">
-                    <td>${i++}</td> 
-                    <td>${lista.Nombres+' '+lista.Apellidos}</td>
-                    <td>${lista.depart}</td>
-                    <td>${lista.fecha_ini}</td>
-                    <td id="this_descrip">${lista.descrip}</td>
-                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
-                    <td>${lista.status}</td>                    
-                    <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>
-                    
-                </tr>`;
-                $('#lista_insi').html(template);
 
-                template_1+= `
-                <tr elmentoid="${lista.id_usuariops}">
-                    <td>${i++}</td> 
-                    <td>${lista.depart}</td>
-                    <td>${lista.fecha_ini}</td>
-                    <td id="this_descrip">${lista.descrip}</td>
-                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
-                    <td id="depart_ruta">${lista.depart_ruta}</td>                    
-                    <td><button type="button" id="btn_resp" class="btn btn-secundary" data-bs-toggle="" data-bs-target="#staticBackdrop">Responder</button> </td>
-                    
-                </tr>`;
-                $('#lista_anasafi').html(template_1);      
-              });
-   
-        })
-        .fail(function(){
-          alert('Hubo un errror al cargar las insidencias');
-        });  
-
-}
 //**CRUD INCIDENCIAS SEGUN STATUS */
 function crud_inci(status_R){
     var status_S = status_R;
