@@ -163,7 +163,11 @@ function crud_inci(status_R){
     //document.getElementById("loading_full").style.display="none";   
     //alert (listas_usuarios);   
     var i = 1;  
-    var listas = JSON.parse(listas_insidencias);       
+    var listas = JSON.parse(listas_insidencias); 
+    if(listas == ""){
+        alert ("No existe registro para esta petición");  
+        $('#lista_insi').html("<td></td> "); 
+     }       
     var template='';
     var template_1='';
     listas.forEach(lista =>{
