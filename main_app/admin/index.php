@@ -58,7 +58,7 @@
         <option value="">Selecicone una opción</option>
         <option value="Inicio">Inicio</option>
         <option value="Inicio">Proceso</option>
-        <option value="Inicio">Finalizado</option>
+        <option value="Finalizado">Finalizado</option>
     </select>
     </div>   
     <table id="table_insi" class="table table-bordered table-hover table-striped">
