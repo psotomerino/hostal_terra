@@ -43,7 +43,7 @@ $(document).on('click','#btn_insi',function(){
 //********* Cargar crud segun status**********
 $('#status_R').on('change', function(){
     var status_R = $('#status_R').val();
-    //alert (status_R);
+    console.log (status_R);
     crud_inci(status_R);    
 })
 

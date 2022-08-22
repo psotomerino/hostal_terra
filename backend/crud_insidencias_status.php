@@ -21,7 +21,7 @@ function get_insidencias_status(){
             FROM `insidencias` 
                         INNER JOIN usuarios_ps ON usuarios_ps.Id_usuariops = insidencias.id_usuariops 
                         INNER JOIN departamentos ON departamentos.id_departamentos = insidencias.id_departamentos
-                        where insidencias.status = $status_S";
+                        where insidencias.status = '$status_S'";
     $resultado = mysqli_query($mysqli,$query);
         $json = array();
     while ($fila =  mysqli_fetch_array($resultado)){
