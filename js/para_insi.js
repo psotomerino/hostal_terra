@@ -40,6 +40,12 @@ $(document).on('click','#btn_insi',function(){
    
     
 });
+//********* Cargar crud segun status**********
+$('#status_R').on('change', function(){
+    var status_R = $('#status_R').val();
+    alert (status_R);
+    //Objetivo_general(id_asigD);    
+})
 
 $(document).on('click','#btn_enruta',function(){
     let elemento = $(this)[0].parentElement.parentElement;
