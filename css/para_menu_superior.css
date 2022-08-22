@@ -1,0 +1,20 @@
+#btn_movil{
+    display: none;
+}
+@media screen and (max-width: 1024px){
+
+    
+    
+}
+@media screen and (max-width: 900px){
+    
+    #btn-salir {
+        display: none;
+    }  
+    #btn_movil{
+    display: block;
+    background-color: #17700B; 
+    color: white;
+    }
+
+}
