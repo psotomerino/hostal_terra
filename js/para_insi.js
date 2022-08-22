@@ -10,6 +10,7 @@ jQuery(document).ready(function(){
     $('#nombre_usuario').val(nombres);
     $('#fecha_ini').val(fecha_ini);
     $('.contenedor').hide();
+    $('#btn_enruta').hide();
     let dep = $('#Ddepartamento').text();
     
     if (dep == "Soporte"){
@@ -171,6 +172,7 @@ function crud_inci(status_R){
     var template='';
     var template_1='';
     listas.forEach(lista =>{
+            //if(lista.status =="")
           
             template+= `
             <tr elmentoid="${lista.id_usuariops}">
