@@ -2,6 +2,9 @@
     include 'template/header.php';    
 
 ?>
+<div class="titulo">
+  este es un cambio desde vs para github 
+</div>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Launch static backdrop modal
