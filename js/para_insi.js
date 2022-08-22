@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
     $('#nombre_usuario').val(nombres);
     $('#fecha_ini').val(fecha_ini);
     $('.contenedor').hide();
-    $('#btn_enruta').hide();
+   
     let dep = $('#Ddepartamento').text();
     
     if (dep == "Soporte"){
@@ -97,6 +97,7 @@ $(document).on('click','#envio_inci',function (e){
 
 //**CRUD INCIDENCIAS SEGUN STATUS */
 function crud_inci(status_R){
+    $('#btn_enruta').hide();
     var status_S = status_R;
     $.ajax({
       url: '../../backend/crud_insidencias_status.php',
