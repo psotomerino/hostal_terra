@@ -53,8 +53,8 @@
     </div>
 
    <div class="contenedor mt-4"> 
-   <div>
-    <select name="status_R" id="status_R">
+   <div class="mb-3">
+    <select name="status_R" id="status_R" clase =" formulario-control "> 
         <option value="">Selecicone una opción</option>
         <option value="Inicio">Inicio</option>
         <option value="Inicio">Proceso</option>
