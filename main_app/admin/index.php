@@ -55,6 +55,7 @@
    <div class="contenedor mt-4"> 
    <div>
     <select name="status_R" id="status_R">
+        <option value="">Selecicone una opción</option>
         <option value="Inicio">Inicio</option>
         <option value="Inicio">Proceso</option>
         <option value="Inicio">Finalizado</option>
