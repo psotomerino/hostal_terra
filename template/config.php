@@ -1,7 +1,7 @@
 <?php
-    $db_host = "localhost";
-    $db_nombre="hostalte_master";
-    $db_usuario="hostalte";
-    $db_contra="Ecuador.2016#";
+    $db_host = "";
+    $db_nombre="";
+    $db_usuario="";
+    $db_contra="";
     
 ?>
