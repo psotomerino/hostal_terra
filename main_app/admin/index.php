@@ -30,6 +30,9 @@
     .contenedor{
         align-content: center;
     }
+    .sele{
+        background-color: blue;
+    }
 
 </style> 
 <body>
@@ -53,13 +56,13 @@
     </div>
 
    <div class="contenedor mt-4"> 
-   <div class="mb-3 ml-5 ml-5">
-    <select name="status_R" id="status_R" clase ="form-select form-select-lg mb-3"> 
-        <option value="">Selecicone una opción</option>
-        <option value="Inicio">Inicio</option>
-        <option value="Proceso">Proceso</option>
-        <option value="Finalizado">Finalizado</option>
-    </select>
+   <div class="sele">
+        <select name="status_R" id="status_R" clase ="form-select form-select-lg mb-3"> 
+            <option value="">Selecicone una opción</option>
+            <option value="Inicio">Inicio</option>
+            <option value="Proceso">Proceso</option>
+            <option value="Finalizado">Finalizado</option>
+        </select>
     </div>   
     <table id="table_insi" class="table table-bordered table-hover table-striped">
        <thead class="thead-light">
