@@ -157,7 +157,7 @@ function crud_inci(status_R){
     }); 
     if(status_R == "Proceso"){
         //alert (status_R);
-        $('#btn_enruta').hide();
+        $('#ocl').hide();
     } 
 
 }
