@@ -97,9 +97,10 @@ $(document).on('click','#envio_inci',function (e){
 
 //**CRUD INCIDENCIAS SEGUN STATUS */
 function crud_inci(status_R){
-    //alert(status_R);
+    
     if(status_R == "Proceso"){
-        alert (status_R);
+        //alert (status_R);
+        $('#btn_enruta').hide();
     }
     var status_S = status_R;
     $.ajax({
