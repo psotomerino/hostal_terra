@@ -32,6 +32,9 @@
     }
     .sele{
         background-color: blue;
+        padding: 3px;
+        width: 50%;
+        margin-left: 30px;
     }
 
 </style> 
