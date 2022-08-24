@@ -36,6 +36,10 @@
         margin-left: 10px;
         
     }
+    #btn_enruta{
+        display: none;
+
+    }
 
 </style> 
 <body>
@@ -82,7 +86,9 @@
            </tr>
          
        </thead>
-       <tbody id="lista_insi"></tbody>
+       <tbody id="lista_insi">
+
+       </tbody>
        
     </table>
     <table id="table_anasafi" class="table table-bordered table-hover table-striped">

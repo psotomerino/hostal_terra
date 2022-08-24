@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
     $('#nombre_usuario').val(nombres);
     $('#fecha_ini').val(fecha_ini);
     $('.contenedor').hide();
-    $('#ocl').hide();
+    
     let dep = $('#Ddepartamento').text();
     
     if (dep == "Soporte"){
