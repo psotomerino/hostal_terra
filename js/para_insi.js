@@ -96,12 +96,8 @@ $(document).on('click','#envio_inci',function (e){
 //********* CRUD INSIDENCIAS**********
 
 //**CRUD INCIDENCIAS SEGUN STATUS */
-function crud_inci(status_R){
+function crud_inci(status_R){   
     
-    if(status_R == "Proceso"){
-        //alert (status_R);
-        $('#btn_enruta').hide();
-    }
     var status_S = status_R;
     $.ajax({
       url: '../../backend/crud_insidencias_status.php',
@@ -158,7 +154,11 @@ function crud_inci(status_R){
     })
     .fail(function(){
       alert('Hubo un errror al cargar las insidencias');
-    });  
+    }); 
+    if(status_R == "Proceso"){
+        //alert (status_R);
+        $('#btn_enruta').hide();
+    } 
 
 }
 //***** ACTUALIZA RUTEO ***** 
