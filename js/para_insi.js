@@ -97,7 +97,7 @@ $(document).on('click','#envio_inci',function (e){
 
 //**CRUD INCIDENCIAS SEGUN STATUS */
 function crud_inci(status_R){
-    $('#btn_enruta').hide();
+    $('#ocl').hide();
     var status_S = status_R;
     $.ajax({
       url: '../../backend/crud_insidencias_status.php',
@@ -132,7 +132,7 @@ function crud_inci(status_R){
                 <td id="this_descrip">${lista.descrip}</td>
                 <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
                 <td>${lista.status}</td>                    
-                <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>
+                <td id="ocl"><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>
                 
             </tr>`;
             $('#lista_insi').html(template);
