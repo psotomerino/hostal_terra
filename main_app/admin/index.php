@@ -53,8 +53,8 @@
     </div>
 
    <div class="contenedor mt-4"> 
-   <div class="mb-3 ml-5">
-    <select name="status_R" id="status_R" clase ="form-select mb-3"> 
+   <div class="mb-3 ml-5 ml-5">
+    <select name="status_R" id="status_R" clase ="form-select form-select-lg mb-3"> 
         <option value="">Selecicone una opción</option>
         <option value="Inicio">Inicio</option>
         <option value="Proceso">Proceso</option>
