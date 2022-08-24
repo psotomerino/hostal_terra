@@ -33,7 +33,7 @@
     .sele{
         padding: 3px;
         width: 30%;
-        margin-left: 20px;
+        margin-left: 10px;
         
     }
 
