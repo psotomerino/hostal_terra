@@ -31,10 +31,10 @@
         align-content: center;
     }
     .sele{
-        background-color: blue;
         padding: 3px;
-        width: 50%;
-        margin-left: 30px;
+        width: 30%;
+        margin-left: 20px;
+        
     }
 
 </style> 
@@ -60,13 +60,14 @@
 
    <div class="contenedor mt-4"> 
    <div class="sele">
-        <select name="status_R" id="status_R" clase ="form-select form-select-lg mb-3"> 
+        <select name="status_R" id="status_R" clase ="form-control"> 
             <option value="">Selecicone una opción</option>
             <option value="Inicio">Inicio</option>
             <option value="Proceso">Proceso</option>
             <option value="Finalizado">Finalizado</option>
         </select>
-    </div>   
+    </div>  
+    <br> 
     <table id="table_insi" class="table table-bordered table-hover table-striped">
        <thead class="thead-light">
            <tr>
