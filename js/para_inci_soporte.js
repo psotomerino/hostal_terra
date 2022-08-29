@@ -69,7 +69,7 @@ function crud_inci(status_R){
 }
 //** BOTON DE RUTA */
 $(document).on('click','#btn_enruta',function(){
-    let elemento = $(this)[0].parentElement.parentElement.parentElement;
+    let elemento = $(this)[0].parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
     alert (id_de_inci);
     // $('#staticBackdrop').modal('show');
