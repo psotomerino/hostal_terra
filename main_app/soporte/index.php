@@ -57,7 +57,7 @@
     
 </section> 
 <div class="grid-container g-0" id="home">
-      <div class="grid-item" id="btn_misinsi" ><p><img src="../../imagenes/mis_inci.png" class="img_" alt=""></p><p>MIS INCIDENCIA</p></div>
+      <div class="grid-item" id="btn_inci" ><p><img src="../../imagenes/mis_inci.png" class="img_" alt=""></p><p>INCIDENCIAS</p></div>
       <!-- <div class="grid-item" id="btn_insi"><p><img src="../../imagenes/incidencia.png" class="img_" alt=""></p><p>NUEVA INCIDENCIA</p></div> -->
       <div class=""></div>
       <div class=""></div>
@@ -65,7 +65,34 @@
       <div class=""></div>
       <div class=""></div>
       <div class=""></div>
+</div> 
+<div class="contenedor mt-4">
+<div class="sele">
+        <select name="status_R" id="status_R" class ="selector"> 
+            <option value="">Selecicone una opción</option>
+            <option value="Inicio">Inicio</option>
+            <option value="Proceso">Proceso</option>
+            <option value="Finalizado">Finalizado</option>
+        </select>
+    </div>  
+    <br> 
+    <table id="table_proceso" class="table table-bordered table-hover table-striped">
+       <thead class="thead-light">
+           <tr>
+               <th >Fecha/registro</th>
+               <th >Descripción</th>
+               <th >Foto</th>              
+               <th >Estado</th>           
+           </tr>
+         
+       </thead>
+       <tbody id="">
 
-    </div>   
+       </tbody>
+       
+    </table>    
+</div>
+
 </body>
 </html>
+<script src="../../js/para_inci_soporte.js"></script>
