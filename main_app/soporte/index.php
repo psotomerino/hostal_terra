@@ -35,10 +35,6 @@
         margin-left: 10px;
         
     }
-    #btn_enruta{
-        display: none;
-
-    }
     .selector{
         padding: 3px;
         width: 50%;
