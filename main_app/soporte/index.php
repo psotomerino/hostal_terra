@@ -79,7 +79,9 @@
                <th >Departamento / ruta</th>
                <th>Fecha de reporte</th>
                <th>Descripción</th>
-               <th>Captura/pantalla</th>   
+               <th>Captura/pantalla</th> 
+               <th>Estado</th> 
+               <th>Acciones</th>  
            </tr>
          
        </thead>
