@@ -39,8 +39,9 @@
         padding: 3px;
         width: 50%;
         background-color: rgba(145, 228, 163, 0.534);
-        
-        
+    }
+    #table_inicio{
+        width: 90%;
     }
 
 </style>
