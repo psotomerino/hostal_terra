@@ -52,7 +52,7 @@ function crud_inci(status_R){
                 <tr elmentoid="${lista.id_inci}">                    
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
-                    <td id="this_descrip">${lista.descrip}</td>
+                    <td id="this_descrip_">${lista.descrip}</td>
                     <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="No se envió ninguna imagen para esta incidencia"></td>
                     <td>${lista.status}</td>
                     <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>                   
@@ -74,7 +74,7 @@ $(document).on('click','#btn_enruta',function(){
     //alert (id_de_inci);
     $('#staticBackdrop').modal('show');
     $('#id_inci').val(id_de_inci);
-    let descrip = $('#this_descrip').text();
+    let descrip = $('#this_descrip_').text();
     $('#descrip_').text(descrip);
     /*$('#aside_left').hide();
     $('#cuerpo').show();*/     
