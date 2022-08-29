@@ -55,7 +55,7 @@ function crud_inci(status_R){
                     <td id="this_descrip">${lista.descrip}</td>
                     <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="No se envió ninguna imagen para esta incidencia"></td>
                     <td>${lista.status}</td>
-                    <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>                   
+                    <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Enrutar</button> </td>                   
                 </tr>`;
                 $('#lista_inicio').html(template_1);
             }
