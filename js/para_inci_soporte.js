@@ -49,7 +49,7 @@ function crud_inci(status_R){
                 $('#table_inicio').show();
                 $('#table_proceso').hide();
                 template_1+= `
-                <tr elmentoid="${lista.id_usuariops}">                    
+                <tr elmentoid="${lista.id_inci}">                    
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
@@ -69,7 +69,7 @@ function crud_inci(status_R){
 }
 //** BOTON DE RUTA */
 $(document).on('click','#btn_enruta',function(){
-    let elemento = $(this)[0].parentElement;
+    let elemento = $(this)[0].parentElement.parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
     alert (id_de_inci);
     // $('#staticBackdrop').modal('show');

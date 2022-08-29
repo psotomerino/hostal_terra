@@ -9,7 +9,8 @@ function get_insidencias_status(){
             usuarios_ps.Id_usuariops, 
             usuarios_ps.Nombres, 
             usuarios_ps.Apellidos, 
-            departamentos.nom_departamente, 
+            departamentos.nom_departamente,
+            insidencias.id_insi, 
             insidencias.fecha_ini, 
             insidencias.descrip, 
             insidencias.foto_in, 
@@ -26,7 +27,8 @@ function get_insidencias_status(){
         $json = array();
     while ($fila =  mysqli_fetch_array($resultado)){
         $json[]=array (
-        'id_usuariops' =>$fila['Id_usuariops'],
+            
+        'id_inci' =>$fila['id_insi'],
         'Nombres' =>$fila['Nombres'],
         'Apellidos' =>$fila['Apellidos'], 
         'depart' =>$fila['nom_departamente'],   
