@@ -76,21 +76,19 @@
         </select>
     </div>  
     <br> 
-    <table id="table_proceso" class="table table-bordered table-hover table-striped">
+    <table id="table_inicio" class="table table-bordered table-hover table-striped">
        <thead class="thead-light">
            <tr>
-               <th >Fecha/registro</th>
-               <th >Descripción</th>
-               <th >Foto</th>              
-               <th >Estado</th>           
+               <th >Departamento / ruta</th>
+               <th>Fecha de reporte</th>
+               <th>Descripción</th>
+               <th>Captura/pantalla</th>   
            </tr>
          
        </thead>
-       <tbody id="">
-
-       </tbody>
+       <tbody id="lista_inicio"></tbody>
        
-    </table>    
+    </table>   
 </div>
 
 </body>
