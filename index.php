@@ -7,11 +7,10 @@
 		if($_SESSION['usuario']['tipo_usuario']== "Admin"){
 			header('Location: main_app/admin/');            
 		}else if($_SESSION['usuario']['tipo_usuario']== "Camarero"){
-			header('Location: main_app/camarero/');
-            
-		}/*else if($_SESSION['usuario']['tipo_usuario']== "docente"){
-			header('Location: main_app/docente/');
-		}else if($_SESSION['usuario']['tipo_usuario']== "estudiante"){
+			header('Location: main_app/camarero/');            
+		}else if($_SESSION['usuario']['tipo_usuario']== "Soporte"){
+			header('Location: main_app/soporte/');
+		}/*else if($_SESSION['usuario']['tipo_usuario']== "estudiante"){
 			header('Location: main_app/estudiante/');
 		}else if($_SESSION['usuario']['tipo_usuario']== "curricular"){
 			header('Location: /main_app/curriculares/');

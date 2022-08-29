@@ -21,11 +21,11 @@ jQuery(document).on('submit','#formlg',function (event){
             }  else if(respuesta.tipo == 'Camarero' ){
                 location.href = 'main_app/camarero/'; 
                 
-            }  /* else if(respuesta.tipo == 'administrativo' ){
+            } else if(respuesta.tipo == 'Soporte' ){
                 console.log (respuesta);
-                location.href = 'main_app/administrador/'; 
+                location.href = 'main_app/soporte/'; 
                 
-            }else if(respuesta.tipo == 'estudiante' ){
+            }/*else if(respuesta.tipo == 'estudiante' ){
                 location.href = 'main_app/estudiante/';
                 
             }else if(respuesta.tipo == 'curricular' ){
