@@ -67,6 +67,18 @@ function crud_inci(status_R){
     });    
 
 }
+//** BOTON DE RUTA */
+$(document).on('click','#btn_enruta',function(){
+    let elemento = $(this)[0].parentElement.parentElement;
+    let id_de_inci = $(elemento).attr('elmentoid');
+    alert (id_de_inci);
+    // $('#staticBackdrop').modal('show');
+    // $('#id_inci').val(id_de_inci);
+    // let descrip = $('#this_descrip').text();
+    // $('#descrip_').text(descrip);
+    /*$('#aside_left').hide();
+    $('#cuerpo').show();*/     
+});
 
 /** FIN DE TODO */    
 })
