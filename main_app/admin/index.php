@@ -40,6 +40,13 @@
         display: none;
 
     }
+    .selector{
+        padding: 3px;
+        width: 50%;
+        background-color: rgba(145, 228, 163, 0.534);
+        
+        
+    }
 
 </style> 
 <body>
@@ -64,7 +71,7 @@
 
    <div class="contenedor mt-4"> 
    <div class="sele">
-        <select name="status_R" id="status_R" clase ="form-control"> 
+        <select name="status_R" id="status_R" class ="selector"> 
             <option value="">Selecicone una opción</option>
             <option value="Inicio">Inicio</option>
             <option value="Proceso">Proceso</option>
@@ -72,17 +79,14 @@
         </select>
     </div>  
     <br> 
-    <table id="table_insi" class="table table-bordered table-hover table-striped">
+    <table id="table_proceso" class="table table-bordered table-hover table-striped">
        <thead class="thead-light">
            <tr>
-               <th >Ord.</th>
-               <th >Usuario</th>
-               <th >Dept./Origen</th>
                <th >Fecha/registro</th>
                <th >Descripción</th>
                <th >Foto</th>              
-               <th >Ruta</th>
-               <th >Gestion</th>
+               <th >Estado</th>
+               
            </tr>
          
        </thead>
@@ -91,17 +95,19 @@
        </tbody>
        
     </table>
-    <table id="table_anasafi" class="table table-bordered table-hover table-striped">
+    <table id="table_inicio" class="table table-bordered table-hover table-striped">
        <thead class="thead-light">
            <tr>
-               <th >Ord.</th>
-               <th >Usuario</th>
                <th >Departamento / ruta</th>
+               <th>Fecha de reporte</th>
+               <th>Descripción</th>
+               <th>Captura/pantalla</th>
+
     
            </tr>
          
        </thead>
-       <tbody id="lista_anasafi"></tbody>
+       <tbody id="lista_inicio"></tbody>
        
     </table>  
     </div>
@@ -129,7 +135,7 @@
                     <input type="text" class="form-control" name="fecha_ini" id="fecha_ini" >                       
                 </div> 
                 <div class="mb-4">
-                    <textarea name="descrip" id="descrip" class="form-control " rows="10" cols="40"> 
+                     <textarea name="descrip" id="descrip" class="form-control " rows="10" cols="40">  <!--edito  -->
                     </textarea>                     
                 </div>                               
                 <div class="mb-4">
@@ -145,7 +151,7 @@
 
                     </select>                      
                 </div> 
-                
+                <img src="" alt="">
                 <button type="submit" id="envio_inci"  class="btn btn-primary w-100">Enviar inicidencia</button>
             </form>
             
@@ -212,11 +218,17 @@
     </div>
 </body>
 </html>
+<script src="../../ckfinder/ckfinder.js"></script>
 <script src="../../js/para_insi.js"></script>
 <script src="../../js/jquery.richtext.js"></script> 
 <script>
-   CKEDITOR.replace( 'descrip' );
-   CKEDITOR.replace( 'descrip2' );
+//    CKEDITOR.replace( 'descrip' );
+//    CKEDITOR.replace( 'descrip2' );
+    window.onload = function(){
+    editor = CKEDITOR.replace( 'descrip' );
+    CKFinder.setupCKEditor(editor,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');
+         }              
+            
 </script> 
 <script>
     date = new Date();

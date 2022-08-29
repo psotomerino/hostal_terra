@@ -10,15 +10,17 @@ jQuery(document).ready(function(){
     $('#nombre_usuario').val(nombres);
     $('#fecha_ini').val(fecha_ini);
     $('.contenedor').hide();
+    $('#table_inicio').hide();
+    $('#table_proceso').hide();
     
     let dep = $('#Ddepartamento').text();
-    
-    if (dep == "Soporte"){
+    /*alert (dep);
+    if (dep == ""){
         $('#table_anasafi').hide();
     }else{
         $('#table_insi').hide();
         $('#table_anasafi').show();
-    }
+    }*/
     
 $(document).on('click','#ini_',function(){
     $('.contenedor').hide();
@@ -121,34 +123,43 @@ function crud_inci(status_R){
     var template='';
     var template_1='';
     listas.forEach(lista =>{
-            //if(lista.status =="")
-          
-            template+= `
-            <tr elmentoid="${lista.id_usuariops}">
-                <td>${i++}</td> 
-                <td>${lista.Nombres+' '+lista.Apellidos}</td>
-                <td>${lista.depart}</td>
-                <td>${lista.fecha_ini}</td>
-                <td id="this_descrip">${lista.descrip}</td>
-                <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
-                <td>${lista.status}</td>                    
-                <td id="ocl"><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>
-                
-            </tr>`;
-            $('#lista_insi').html(template);
+            var mi_estatus  = lista.status;
+            if (mi_estatus == "Inicio"){
+                $('#table_inicio').show();
+                $('#table_proceso').hide();
+                template_1+= `
+                <tr elmentoid="${lista.id_usuariops}">                    
+                    <td>${lista.depart}</td>
+                    <td>${lista.fecha_ini}</td>
+                    <td id="this_descrip">${lista.descrip}</td>
+                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="No se envió ninguna imagen para esta incidencia"></td>
+                    <td></td>                    
+                </tr>`;
+                $('#lista_inicio').html(template_1);
+            }else 
+            {                 
+                if(mi_estatus == "Proceso"){
+                $('#table_inicio').hide();
+                $('#table_proceso').show();
+                template+= `
+                <tr elmentoid="${lista.id_usuariops}">
+                    <td>${lista.fecha_ini}</td>
+                    <td id="this_descrip">${lista.descrip}</td>
+                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
+                    <td>${lista.status}</td>                    
+                    <td id="ocl"><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>
+                    
+                </tr>`;
+                $('#lista_insi').html(template);
+                }
+            }
+            
+             
 
-            template_1+= `
-            <tr elmentoid="${lista.id_usuariops}">
-                <td>${i++}</td> 
-                <td>${lista.depart}</td>
-                <td>${lista.fecha_ini}</td>
-                <td id="this_descrip">${lista.descrip}</td>
-                <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
-                <td id="depart_ruta">${lista.depart_ruta}</td>                    
-                <td><button type="button" id="btn_resp" class="btn btn-secundary" data-bs-toggle="" data-bs-target="#staticBackdrop">Responder</button> </td>
-                
-            </tr>`;
-            $('#lista_anasafi').html(template_1);      
+          
+            
+
+                  
           });
 
     })
