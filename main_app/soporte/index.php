@@ -13,4 +13,13 @@
 
 ?>
 <script src="../../ckeditor/ckeditor.js"></script> 
-<h3>SOY SOPORTE</h3>
+<body>
+<section>
+    <?php include '../menu_superior.php' ?>
+    <div id="ini_base">
+        <button id="ini_" class="btn btn-warning">Incio</button>    
+    </div>
+    
+</section>    
+</body>
+</html>
