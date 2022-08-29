@@ -73,7 +73,7 @@
         </select>
     </div>  
     <br> 
-    <table id="table_inicio" class="table table-bordered table-hover table-striped">
+    <table id="table_inicio" class="table table-bordered  table-striped">
        <thead class="thead-light">
            <tr>
                <th >Departamento / ruta</th>
