@@ -43,12 +43,9 @@
     #table_inicio{
         table-layout: fixed;
         width: 90%;
+        border: 1px solid blue;
     }
-    th, td {
-    border: 1px solid blue;
-    width: 350px;
-    word-wrap: break-word;
-    }
+
 
 </style>
 <body>
