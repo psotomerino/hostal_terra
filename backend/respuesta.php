@@ -1,10 +1,8 @@
 <?php
     $id_incidencia=$_POST["id_inci"];
-    $fecha_ruta =$_POST["fecha_ini_ruta"];
-    $descrip=$_POST["descrip2"];
-    $depart=$_POST["depar_ruta"];
-    $prioridad=$_POST["prioridad"];
-    $status_ruta =$_POST["status_ruta"];
+    $fecha_respuesta =$_POST["fecha_ini_respu"];
+    $respuesta=$_POST["descrip3"];    
+    $status_respu =$_POST["status_respu"];
 
 
     require ("../template/config.php");
@@ -18,11 +16,9 @@
     //echo $id_incidencia;    
 
     $consulta ="UPDATE `insidencias` SET 
-                fecha_ruta =    '$fecha_ruta',
-                descrip_ruta =  '$descrip',
-                depart_ruta =   '$depart',
-                prioridad =     '$prioridad',
-                status='$status_ruta' WHERE id_insi= $id_incidencia"; 
+                fecha_respuesta =    '$fecha_respuesta',
+                respuesta =  '$respuesta',                
+                status='$status_respu' WHERE id_insi= $id_incidencia"; 
   
     $resultado = mysqli_query($conexion,$consulta);
     if(!$resultado){

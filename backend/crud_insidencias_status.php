@@ -18,7 +18,8 @@ function get_insidencias_status(){
             insidencias.fecha_ruta,
             insidencias.descrip_ruta,
             insidencias.depart_ruta,
-            insidencias.prioridad     
+            insidencias.prioridad,
+            insidencias.respuesta     
             FROM `insidencias` 
                         INNER JOIN usuarios_ps ON usuarios_ps.Id_usuariops = insidencias.id_usuariops 
                         INNER JOIN departamentos ON departamentos.id_departamentos = insidencias.id_departamentos
@@ -39,7 +40,8 @@ function get_insidencias_status(){
         'fecha_ruta' => $fila['fecha_ruta'],
         'descrip_ruta' => $fila['descrip_ruta'],
         'depart_ruta' => $fila['depart_ruta'],
-        'prioridad' => $fila['prioridad']        
+        'prioridad' => $fila['prioridad'],
+        'respuesta' => $fila['respuesta']
         );
     }
     $jsonstring = json_encode($json);   

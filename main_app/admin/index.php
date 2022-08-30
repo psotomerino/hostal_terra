@@ -43,8 +43,16 @@
     .selector{
         padding: 3px;
         width: 50%;
-        background-color: rgba(145, 228, 163, 0.534);
+        background-color: rgba(145, 228, 163, 0.534);  
+    }
+    #table_inicio{
+        width: 90%;
+        margin-left: 10px;
         
+    }
+    #table_proceso{
+        width: 90%;
+        margin-left: 10px;
         
     }
 
@@ -79,8 +87,8 @@
         </select>
     </div>  
     <br> 
-    <table id="table_proceso" class="table table-bordered table-hover table-striped">
-       <thead class="thead-light">
+    <table id="table_proceso" class="table table-striped">
+       <thead class="bg-primary">
            <tr>
                <th >Fecha/registro</th>
                <th >Descripción</th>
@@ -90,20 +98,16 @@
            </tr>
          
        </thead>
-       <tbody id="lista_insi">
-
-       </tbody>
+       <tbody id="lista_insi"></tbody>
        
     </table>
-    <table id="table_inicio" class="table table-bordered table-hover table-striped">
-       <thead class="thead-light">
+    <table id="table_inicio" class="table table-striped">
+       <thead class="bg-primary">
            <tr>
                <th >Departamento / ruta</th>
                <th>Fecha de reporte</th>
                <th>Descripción</th>
                <th>Captura/pantalla</th>
-
-    
            </tr>
          
        </thead>

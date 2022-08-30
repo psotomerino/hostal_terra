@@ -50,7 +50,17 @@ $('#status_R').on('change', function(){
     crud_inci(status_R);    
 })
 
-
+$(document).on('click','#btn_enruta',function(){
+    let elemento = $(this)[0].parentElement.parentElement;
+    let id_de_inci = $(elemento).attr('elmentoid');
+    //alert (id_de_usuario);
+    $('#staticBackdrop').modal('show');
+    $('#id_inci').val(id_de_inci);
+    let descrip = $('#this_descrip').text();
+    $('#descrip_').text(descrip);
+    /*$('#aside_left').hide();
+    $('#cuerpo').show();*/     
+});
     
 $(document).on('click','#envio_inci',function (e){    
      e.preventDefault(); 
@@ -108,7 +118,8 @@ function crud_inci(status_R){
     var listas = JSON.parse(listas_insidencias); 
     if(listas == ""){
         alert ("No existe registro para esta petición");  
-        $('#lista_insi').html("<td></td> "); 
+        $('#lista_inicio').html(""); 
+        $('#lista_insi').html("");
      }       
     var template='';
     var template_1='';
@@ -122,8 +133,8 @@ function crud_inci(status_R){
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
-                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="No se envió ninguna imagen para esta incidencia"></td>
-                    <td></td>                    
+                    <td><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
+     
                 </tr>`;
                 $('#lista_inicio').html(template_1);
             }else 
@@ -135,27 +146,54 @@ function crud_inci(status_R){
                 <tr elmentoid="${lista.id_usuariops}">
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
-                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in"></td>
+                    <td><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
                     <td>${lista.status}</td>                    
-                    <td id="ocl"><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>
+                   
                     
                 </tr>`;
                 $('#lista_insi').html(template);
                 }
-            }  
-        });
+            }   
+          });
 
     })
     .fail(function(){
       alert('Hubo un errror al cargar las insidencias');
     }); 
-    if(status_R == "Proceso"){
-        //alert (status_R);
-        $('#ocl').hide();
-    } 
+
 
 }
+//***** ACTUALIZA RUTEO ***** 
+$(document).on('click','#envio_ruta_',function (e){    
+    e.preventDefault(); 
+    //alert ('se detuvo el envio de ruta');
+    var R_form_ruta = $("#form_ruteo");
+    for ( instance in CKEDITOR.instances )
+    CKEDITOR.instances[instance].updateElement();
+    var datos = new FormData($("#form_ruteo")[0]);                
+        $.ajax({
+        url: '../../backend/ruteo.php',
+        type: 'POST',
+        data: datos,
+        contentType: false,
+        processData: false,
+        /*beforeSend: function(){
+        document.getElementById("loading_full").style.display="block";
+        document.getElementById("loading_full").innerHTML="<img id='img_lo' src='../../imagenes/loding_1.gif' width='300' height='300'>"; 
+        }, */ 
+        success: function(datos)
+            {
+            alert(datos);
+            /*document.getElementById("loading_full").style.display="none";      
+            alert (datos);*/
+            $('#staticBackdrop').modal('hide');
+            lista_insidencias();
+            
+            }
 
+        }); 
+
+}) 
    
 //******FIN DE TODO *******    
 });

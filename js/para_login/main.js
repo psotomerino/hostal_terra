@@ -25,10 +25,10 @@ jQuery(document).on('submit','#formlg',function (event){
                 console.log (respuesta);
                 location.href = 'main_app/soporte/'; 
                 
-            }/*else if(respuesta.tipo == 'estudiante' ){
-                location.href = 'main_app/estudiante/';
+            }else if(respuesta.tipo == 'Anasafi' ){
+                location.href = 'main_app/anasafi/';
                 
-            }else if(respuesta.tipo == 'curricular' ){
+            }/*else if(respuesta.tipo == 'curricular' ){
                 location.href = 'main_app/curriculares/';                
             }
             

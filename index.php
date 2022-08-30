@@ -10,9 +10,9 @@
 			header('Location: main_app/camarero/');            
 		}else if($_SESSION['usuario']['tipo_usuario']== "Soporte"){
 			header('Location: main_app/soporte/');
-		}/*else if($_SESSION['usuario']['tipo_usuario']== "estudiante"){
-			header('Location: main_app/estudiante/');
-		}else if($_SESSION['usuario']['tipo_usuario']== "curricular"){
+		}else if($_SESSION['usuario']['tipo_usuario']== "Anasafi"){
+			header('Location: main_app/anasafi/');
+		}/*else if($_SESSION['usuario']['tipo_usuario']== "curricular"){
 			header('Location: /main_app/curriculares/');
 		}*/
 	}

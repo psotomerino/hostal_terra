@@ -1,28 +1,22 @@
 jQuery(document).ready(function(){
-    $('.contenedor').hide();
-   
-
+    $('.contenedor_Ana').hide();    
+    crud_inci();
     $(document).on('click','#btn_inci',function(){
+        
         //lista_insidencias();
-        $('.contenedor').show();        
+        $('.contenedor_Ana').show();        
         $('#home').hide();         
         
     }); 
     $(document).on('click','#ini_',function(){
-        $('.contenedor').hide();      
+        $('.contenedor_Ana').hide();      
         $('#home').show(); 
         
     });
-    $('#status_R').on('change', function(){
-        var status_R = $('#status_R').val();
-        //alert (status_R);
-        crud_inci(status_R);    
-    })
 
 //** CRUD INCIDENCIAS */    
-function crud_inci(status_R){   
-    
-    var status_S = status_R;
+function crud_inci(){     
+    var status_S = "Proceso";
     $.ajax({
       url: '../../backend/crud_insidencias_status.php',
       data: {'status_S': status_S},
@@ -37,28 +31,25 @@ function crud_inci(status_R){
     //document.getElementById("loading_full").style.display="none";   
     //alert (listas_usuarios);   
     var i = 1;  
-    var listas = JSON.parse(listas_insidencias); 
-    if(listas == ""){
-        alert ("No existe registro para esta petición");  
-        $('#lista_insi').html("<td></td> "); 
-     }       
+    var listas = JSON.parse(listas_insidencias);        
     var template='';
     var template_1='';
     listas.forEach(lista =>{
             var mi_estatus  = lista.status;
-            if (mi_estatus == "Inicio"){
+            if (mi_estatus == "Proceso"){
                 $('#table_inicio').show();
                 $('#table_proceso').hide();
                 template_1+= `
                 <tr elmentoid="${lista.id_inci}">                    
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
-                    <td id="this_descrip_">${lista.descrip}</td>
+                    <td id="fecha_ruta">${lista.fecha_ruta}</td>
+                    <td id="this_descrip_">${lista.descrip_ruta}</td>
                     <td><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
                     <td>${lista.status}</td>
-                    <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>                   
+                    <td><button type="button" id="btn_respu" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Respuesta</button> </td>                   
                 </tr>`;
-                $('#lista_inicio').html(template_1);
+                $('#lista_proce').html(template_1);
             }
             });
 
@@ -68,8 +59,8 @@ function crud_inci(status_R){
     });    
 
 }
-//** BOTON DE RUTA */
-$(document).on('click','#btn_enruta',function(){
+//** BOTON DE RESPUESTA */
+$(document).on('click','#btn_respu',function(){
     
     let elemento = $(this)[0].parentElement.parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
@@ -79,22 +70,18 @@ $(document).on('click','#btn_enruta',function(){
     var descript = $('#this_descrip_').text();
     //alert (descript);
     $('#descrip_').text(descript);
-    /*$('#aside_left').hide();
-    $('#cuerpo').show();*/ 
         
 });
-
-
 //***** ACTUALIZA RUTEO ***** 
-$(document).on('click','#envio_ruta_',function (e){    
+$(document).on('click','#envio_respu',function (e){    
     e.preventDefault(); 
     //alert ('se detuvo el envio de ruta');
-    var R_form_ruta = $("#form_ruteo");
+    var R_form_ruta = $("#form_respuesta");
     for ( instance in CKEDITOR.instances )
     CKEDITOR.instances[instance].updateElement();
-    var datos = new FormData($("#form_ruteo")[0]);                
+    var datos = new FormData($("#form_respuesta")[0]);                
         $.ajax({
-        url: '../../backend/ruteo.php',
+        url: '../../backend/respuesta.php',
         type: 'POST',
         data: datos,
         contentType: false,
@@ -110,13 +97,14 @@ $(document).on('click','#envio_ruta_',function (e){
             alert (datos);*/
             $('#staticBackdrop').modal('hide');
             R_form_ruta[0].reset();
-            lista_insidencias();
-            
+            location.reload();
+            //crud_inci();            
             }
 
         }); 
 
 }) 
 
+
 /** FIN DE TODO */    
-})
+});
