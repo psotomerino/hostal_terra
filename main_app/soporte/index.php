@@ -41,7 +41,7 @@
         background-color: rgba(145, 228, 163, 0.534);
     }
     #table_inicio{
-        table-layout: fixed;
+       
         width: 90%;
         
     }
