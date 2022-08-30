@@ -69,13 +69,13 @@ function crud_inci(status_R){
 }
 //** BOTON DE RUTA */
 $(document).on('click','#btn_enruta',function(){
-    $('#descrip_').text(" ");
+    var descript = " ";
     let elemento = $(this)[0].parentElement.parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
     //alert (id_de_inci);
     $('#staticBackdrop').modal('show');
     $('#id_inci').val(id_de_inci);
-    var descript = $('#this_descrip_').text();
+    descript = $('#this_descrip_').text();
     alert (descript);
     $('#descrip_').text(descrip);
     /*$('#aside_left').hide();
