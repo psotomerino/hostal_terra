@@ -1,5 +1,6 @@
 jQuery(document).ready(function(){
     $('.contenedor').hide();
+    $('#descrip2').CKEDITOR();
 
     $(document).on('click','#btn_inci',function(){
         //lista_insidencias();
@@ -75,7 +76,7 @@ $(document).on('click','#btn_enruta',function(){
     //alert (id_de_inci);
     $('#staticBackdrop').modal('show');
     $('#id_inci').val(id_de_inci);
-    var descript = $('#this_descrip_').html();
+    var descript = $('#this_descrip_').text();
     //alert (descript);
     $('#descrip_').text(descript);
     /*$('#aside_left').hide();
