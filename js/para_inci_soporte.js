@@ -69,7 +69,7 @@ function crud_inci(status_R){
 }
 //** BOTON DE RUTA */
 $(document).on('click','#btn_enruta',function(){
-    $('#descrip_').text("");
+    
     let elemento = $(this)[0].parentElement.parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
     //alert (id_de_inci);
@@ -79,7 +79,8 @@ $(document).on('click','#btn_enruta',function(){
     alert (descript);
     $('#descrip_').text(descrip);
     /*$('#aside_left').hide();
-    $('#cuerpo').show();*/     
+    $('#cuerpo').show();*/ 
+    descript.trigger();    
 });
 
 /** FIN DE TODO */    
