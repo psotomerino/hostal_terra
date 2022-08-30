@@ -77,7 +77,7 @@ $(document).on('click','#btn_enruta',function(){
     $('#id_inci').val(id_de_inci);
     var descript = $('.this_descrip_').text();
     //alert (descript);
-    $('.descrip_').text(descript);
+    $('#descrip_').text(descript);
     /*$('#aside_left').hide();
     $('#cuerpo').show();*/ 
         
