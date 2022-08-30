@@ -28,8 +28,9 @@ width: 100%;
 transition: all 300ms;
 position: relative;
 }
-#img_in:target{
-transform: scale(4.15);
+#img_in:focus{
+    width: 75px;
+    height: 75px
 }
 
 @media screen and (max-width: 1024px){
