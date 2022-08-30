@@ -76,14 +76,14 @@ $(document).on('click','#btn_enruta',function(){
     $('#staticBackdrop').modal('show');
     $('#id_inci').val(id_de_inci);
     var descript = $('#this_descrip_').text();
-    alert (descript);
-    $('#descrip_').text(descrip);
+    //alert (descript);
+    $('#descrip_').text(descript);
     /*$('#aside_left').hide();
     $('#cuerpo').show();*/ 
         
 });
 $(document).on('click','#cerra_modal',function(){
-    $('#descrip_').text("pppppppppp");
+    $('#descrip_').text("");
 });
 
 //***** ACTUALIZA RUTEO ***** 
