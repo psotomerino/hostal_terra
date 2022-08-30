@@ -46,7 +46,7 @@
     }
     th, td {
     border: 1px solid blue;
-    width: 250px;
+    width: 350px;
     word-wrap: break-word;
     }
 
@@ -79,7 +79,7 @@
         </select>
     </div>  
     <br> 
-    <table id="table_inicio" class="table table-bordered  table-striped">
+    <table id="table_inicio" class="">
        <thead class="thead-light">
            <tr>
                <th >Departamento / ruta</th>
