@@ -43,7 +43,7 @@
     #table_inicio{
         table-layout: fixed;
         width: 90%;
-        border: 1px solid blue;
+        
     }
 
 
@@ -76,7 +76,7 @@
         </select>
     </div>  
     <br> 
-    <table id="table_inicio" class="">
+    <table id="table_inicio" class="table table-striped">
        <thead class="thead-light">
            <tr>
                <th >Departamento / ruta</th>
