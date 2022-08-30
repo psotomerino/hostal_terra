@@ -77,7 +77,7 @@
     </div>  
     <br> 
     <table id="table_inicio" class="table table-striped">
-       <thead class="thead-light">
+       <thead class="bg-primary">
            <tr>
                <th >Departamento / ruta</th>
                <th>Fecha de reporte</th>
