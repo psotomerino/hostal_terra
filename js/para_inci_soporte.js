@@ -69,7 +69,6 @@ function crud_inci(status_R){
 }
 //** BOTON DE RUTA */
 $(document).on('click','#btn_enruta',function(){
-    
     let elemento = $(this)[0].parentElement.parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
     //alert (id_de_inci);
@@ -80,8 +79,40 @@ $(document).on('click','#btn_enruta',function(){
     $('#descrip_').text(descrip);
     /*$('#aside_left').hide();
     $('#cuerpo').show();*/ 
-    descript.trigger();    
+        
 });
+//***** ACTUALIZA RUTEO ***** 
+$(document).on('click','#envio_ruta_',function (e){    
+    e.preventDefault(); 
+    //alert ('se detuvo el envio de ruta');
+    var R_form_ruta = $("#form_ruteo");
+    for ( instance in CKEDITOR.instances )
+    CKEDITOR.instances[instance].updateElement();
+    var datos = new FormData($("#form_ruteo")[0]);                
+        $.ajax({
+        url: '../../backend/ruteo.php',
+        type: 'POST',
+        data: datos,
+        contentType: false,
+        processData: false,
+        /*beforeSend: function(){
+        document.getElementById("loading_full").style.display="block";
+        document.getElementById("loading_full").innerHTML="<img id='img_lo' src='../../imagenes/loding_1.gif' width='300' height='300'>"; 
+        }, */ 
+        success: function(datos)
+            {
+            alert(datos);
+            /*document.getElementById("loading_full").style.display="none";      
+            alert (datos);*/
+            $('#staticBackdrop').modal('hide');
+            R_form_ruta[0].reset();
+            lista_insidencias();
+            
+            }
+
+        }); 
+
+}) 
 
 /** FIN DE TODO */    
 })
