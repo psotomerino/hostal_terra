@@ -53,7 +53,7 @@ function crud_inci(status_R){
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip_">${lista.descrip}</td>
-                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="No se envió ninguna imagen para esta incidencia"></td>
+                    <td><img style="width: 150px;" src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt=""></td>
                     <td>${lista.status}</td>
                     <td><button type="button" id="btn_enruta" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Enrutar</button> </td>                   
                 </tr>`;
@@ -69,6 +69,7 @@ function crud_inci(status_R){
 }
 //** BOTON DE RUTA */
 $(document).on('click','#btn_enruta',function(){
+    $('#descrip_').text("");
     let elemento = $(this)[0].parentElement.parentElement;
     let id_de_inci = $(elemento).attr('elmentoid');
     //alert (id_de_inci);
