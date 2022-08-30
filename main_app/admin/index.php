@@ -170,9 +170,7 @@
 //    CKEDITOR.replace( 'descrip2' );
     window.onload = function(){
     editor = CKEDITOR.replace( 'descrip' );
-    CKFinder.setupCKEditor(editor,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');
-    editor_1 = CKEDITOR.replace( 'descrip2' );
-    CKFinder.setupCKEditor(editor_1,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');
+    CKFinder.setupCKEditor(editor,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');    
          }              
             
 </script> 
@@ -182,7 +180,7 @@
     month = date.getMonth() + 1;
     day = date.getDate();
     document.getElementById("fecha_ini_tem").innerHTML =year + "-" + month + "-" + day;
-    document.getElementById("fecha_ini_ruta").value =year + "-" + month + "-" + day;
+    
 </script> 
 
  

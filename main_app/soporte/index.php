@@ -150,3 +150,17 @@
 </body>
 </html>
 <script src="../../js/para_inci_soporte.js"></script>
+<script>
+    window.onload = function(){
+    editor_1 = CKEDITOR.replace( 'descrip2' );
+    CKFinder.setupCKEditor(editor_1,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');
+         }              
+            
+</script> 
+<script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();    
+    document.getElementById("fecha_ini_ruta").value =year + "-" + month + "-" + day;
+</script> 
