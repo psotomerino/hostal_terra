@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
     $('.contenedor').hide();
-    $('#descrip2').CKEDITOR();
+   
 
     $(document).on('click','#btn_inci',function(){
         //lista_insidencias();
