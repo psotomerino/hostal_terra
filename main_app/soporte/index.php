@@ -42,11 +42,11 @@
     }
     #table_inicio{
         table-layout: fixed;
-        width: 250px;
+        width: 90%;
     }
     th, td {
     border: 1px solid blue;
-    width: 100px;
+    width: 250px;
     word-wrap: break-word;
     }
 
