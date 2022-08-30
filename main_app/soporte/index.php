@@ -41,7 +41,13 @@
         background-color: rgba(145, 228, 163, 0.534);
     }
     #table_inicio{
-        width: 90%;
+        table-layout: fixed;
+        width: 250px;
+    }
+    th, td {
+    border: 1px solid blue;
+    width: 100px;
+    word-wrap: break-word;
     }
 
 </style>
