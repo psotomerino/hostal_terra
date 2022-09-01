@@ -44,8 +44,8 @@ function crud_inci(){
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
                     <td id="fecha_ruta">${lista.fecha_ruta}</td>
-                    <td id="this_descrip_">${lista.descrip_ruta}</td>
-                    <td><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
+                    <td id="this_descrip_">${lista.descrip}</td>
+                    <td class="ima_" id="modal_imga" data-bs-toggle="" data-bs-target="#exampleModal"><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
                     <td>${lista.status}</td>
                     <td><button type="button" id="btn_respu" class="btn btn-primary" data-bs-toggle="" data-bs-target="#staticBackdrop">Respuesta</button> </td>                   
                 </tr>`;
@@ -72,7 +72,12 @@ $(document).on('click','#btn_respu',function(){
     $('#descrip_').text(descript);
         
 });
-//***** ACTUALIZA RUTEO ***** 
+//** BOTON DE IMAGEN */
+$(document).on('click','#modal_imga',function(){
+    $('#exampleModal').modal('show');
+       
+});
+//***** ACTUALIZA CONTESTACION ***** 
 $(document).on('click','#envio_respu',function (e){    
     e.preventDefault(); 
     //alert ('se detuvo el envio de ruta');
@@ -104,7 +109,12 @@ $(document).on('click','#envio_respu',function (e){
         }); 
 
 }) 
-
+$(document).on('click','#img_in',function(){
+    // var foto_inci = $('.ima_').html();
+    src= $(this).attr('src');    
+    //alert (src);  
+    $('.modal-body').html("<img src=" + src +" class='modal-imag'>" );  
+}); 
 
 /** FIN DE TODO */    
 });

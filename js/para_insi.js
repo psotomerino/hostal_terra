@@ -133,8 +133,7 @@ function crud_inci(status_R){
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
-                    <td><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
-     
+                    <td class="ima_" data-bs-toggle="modal" data-bs-target="#exampleModal"><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
                 </tr>`;
                 $('#lista_inicio').html(template_1);
             }else 
@@ -146,7 +145,7 @@ function crud_inci(status_R){
                 <tr elmentoid="${lista.id_usuariops}">
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
-                    <td><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
+                    <td class="ima_" data-bs-toggle="modal" data-bs-target="#exampleModal"><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
                     <td>${lista.status}</td>                    
                    
                     
@@ -194,6 +193,14 @@ $(document).on('click','#envio_ruta_',function (e){
         }); 
 
 }) 
+$(document).on('click','#img_in',function(){
+    // var foto_inci = $('.ima_').html();
+    src= $(this).attr('src');    
+    //alert (src);  
+    $('.modal-body').html("<img src=" + src +" class='modal-imag'>" );  
+}); 
+   
+
    
 //******FIN DE TODO *******    
 });
