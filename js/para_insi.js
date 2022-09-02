@@ -12,6 +12,7 @@ jQuery(document).ready(function(){
     $('.contenedor').hide();
     $('#table_inicio').hide();
     $('#table_proceso').hide();
+    //$('#descrip').ckeditor();
     
     let dep = $('#Ddepartamento').text();
     /*alert (dep);
@@ -129,12 +130,13 @@ function crud_inci(status_R){
                 $('#table_inicio').show();
                 $('#table_proceso').hide();
                 template_1+= `
-                <tr elmentoid="${lista.id_usuariops}">                    
+                <tr elmentoid="${lista.id_inci}">                    
                     <td>${lista.depart}</td>
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
                     <td class="ima_" data-bs-toggle="modal" data-bs-target="#exampleModal"><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
-                </tr>`;
+                    <td><i class="fa-solid fa-pen" id="edit_inici" data-bs-toggle="modal" data-bs-target="#modal_inciEdit"  title="Editar incidencia"></i> <i class="fa-regular fa-circle-xmark" id="borra_inci" title="Elimina la incidencia"></i> </td>
+                </tr>`
                 $('#lista_inicio').html(template_1);
             }else 
             {                 
@@ -142,7 +144,7 @@ function crud_inci(status_R){
                 $('#table_inicio').hide();
                 $('#table_proceso').show();
                 template+= `
-                <tr elmentoid="${lista.id_usuariops}">
+                <tr elmentoid="${lista.id_inci}">
                     <td>${lista.fecha_ini}</td>
                     <td id="this_descrip">${lista.descrip}</td>
                     <td class="ima_" data-bs-toggle="modal" data-bs-target="#exampleModal"><img  src="../../backend/img_insi/${lista.foto_in}" id="img_in" alt="" onerror="this.src='../../imagenes/sin_imagen.jpg'";></td>
@@ -157,7 +159,7 @@ function crud_inci(status_R){
 
     })
     .fail(function(){
-      alert('Hubo un errror al cargar las insidencias');
+      alert('Hubo un error al cargar las insidencias');
     }); 
 
 
@@ -199,7 +201,13 @@ $(document).on('click','#img_in',function(){
     //alert (src);  
     $('.modal-body').html("<img src=" + src +" class='modal-imag'>" );  
 }); 
-   
+
+$(document).on('click','#edit_inici',function(){
+    let elemento = $(this)[0].parentElement.parentElement;
+    let id_de_inci = $(elemento).attr('elmentoid');
+    //alert (id_de_inci);   
+    //$('#staticBackdrop').modal(show); 
+});  
 
    
 //******FIN DE TODO *******    

@@ -108,6 +108,7 @@
                <th>Fecha de reporte</th>
                <th>Descripción</th>
                <th>Captura/pantalla</th>
+               <th>Acciones</th>
            </tr>
          
        </thead>
@@ -179,7 +180,25 @@
       </div>
     </div>
   </div>
-</div>    
+</div>  
+<!-- Modal editar incidencia-->  
+<div class="modal fade" id="modal_inciEdit" tabindex="-1" aria-labelledby="modal_inciEditLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_inciEditLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     
 </body>
 </html>
@@ -190,8 +209,8 @@
 //    CKEDITOR.replace( 'descrip' );
 //    CKEDITOR.replace( 'descrip2' );
     window.onload = function(){
-    editor = CKEDITOR.replace( 'descrip' );
-    CKFinder.setupCKEditor(editor,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');    
+     editor = CKEDITOR.replace( 'descrip' );
+     CKFinder.setupCKEditor(editor,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');    
          }              
             
 </script> 

@@ -106,3 +106,4 @@
     <div class="px-lg-5"></div>
 </section>
 <script src="../../js/para_menu-superior.js"></script>
+<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
