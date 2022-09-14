@@ -1,10 +1,12 @@
 jQuery(document).ready(function(){
-    $('.contenedor_Ana').hide();    
-    crud_inci();
+    $('.contenedor_Ana').hide();
+    $('.contenedor_Ana_res').hide();  
+    $('.sele').hide();   
+    //crud_inci();
     $(document).on('click','#btn_inci',function(){
         
         //lista_insidencias();
-        $('.contenedor_Ana').show();        
+        $('.sele').show();                
         $('#home').hide();         
         
     }); 
@@ -13,9 +15,17 @@ jQuery(document).ready(function(){
         $('#home').show(); 
         
     });
+//********* Cargar crud segun status**********
+$('#status_R').on('change', function(){
+    var status_R = $('#status_R').val();
+    //alert (status_R);
+    crud_inci(status_R);    
+})    
 
 //** CRUD INCIDENCIAS */    
-function crud_inci(){     
+function crud_inci(status_R){  
+
+    if (status_R == "Proceso"){
     var status_S = "Proceso";
     $.ajax({
       url: '../../backend/crud_insidencias_status.php',
@@ -52,12 +62,12 @@ function crud_inci(){
                 $('#lista_proce').html(template_1);
             }
             });
-
+    $('.contenedor_Ana').show(); 
     })
     .fail(function(){
       alert('Hubo un errror al cargar las insidencias');
     });    
-
+    }//else (status_R == "CC_respuesta")
 }
 //** BOTON DE RESPUESTA */
 $(document).on('click','#btn_respu',function(){

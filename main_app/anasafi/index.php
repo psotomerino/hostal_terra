@@ -56,6 +56,15 @@
     </div>
     
 </section> 
+<div class="sele">
+        <select name="status_R" id="status_R" class ="selector"> 
+            <option value="">Selecicone una opción</option>            
+            <option value="Proceso">Proceso</option>
+            <option value="CC_respuesta">Con respuesta</option>
+            <option value="Finalizado">Finalizado</option>
+        </select>
+    </div>  
+<br>
 <div class="grid-container g-0" id="home">
       <div class="grid-item" id="btn_inci" ><p><img src="../../imagenes/mis_inci.png" class="img_" alt=""></p><p>INCIDENCIAS</p></div>
       <!-- <div class="grid-item" id="btn_insi"><p><img src="../../imagenes/incidencia.png" class="img_" alt=""></p><p>NUEVA INCIDENCIA</p></div> -->
@@ -67,6 +76,24 @@
       <div class=""></div>
 </div> 
 <div class="contenedor_Ana mt-4">
+    <table id="table_inicio" class="table table-striped">
+       <thead class="bg-primary">
+           <tr>
+               <th >Depart.</th>
+               <th>Fecha de reporte</th>
+               <th>Fecha ruta</th>
+               <th>Solicitud</th>
+               <th>Captura/pantalla</th> 
+               <th>Estado</th> 
+               <th>Acciones</th>  
+           </tr>
+         
+       </thead>
+       <tbody id="lista_proce"></tbody>
+       
+    </table>   
+</div>
+<div class="contenedor_Ana_res mt-4">
     <table id="table_inicio" class="table table-striped">
        <thead class="bg-primary">
            <tr>
