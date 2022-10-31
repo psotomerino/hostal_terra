@@ -45,6 +45,10 @@
         margin-left: 10px;
         
     }
+    #table_proceso{
+        width: 90%;
+        margin-left: 10px;
+    }
 
 
 </style>
@@ -56,9 +60,10 @@
     </div>
     
 </section> 
+
 <div class="grid-container g-0" id="home">
       <div class="grid-item" id="btn_inci" ><p><img src="../../imagenes/mis_inci.png" class="img_" alt=""></p><p>INCIDENCIAS</p></div>
-      <!-- <div class="grid-item" id="btn_insi"><p><img src="../../imagenes/incidencia.png" class="img_" alt=""></p><p>NUEVA INCIDENCIA</p></div> -->
+      <div class="grid-item" id="btn_insi"><p><img src="../../imagenes/incidencia.png" class="img_" alt=""></p><p>NUEVA INCIDENCIA</p></div>
       <div class=""></div>
       <div class=""></div>
       <div class=""></div>
@@ -91,6 +96,21 @@
        <tbody id="lista_inicio"></tbody>
        
     </table>   
+    <table id="table_proceso" class="table table-striped">
+       <thead class="bg-primary">
+           <tr>
+               <th >Departamento / ruta</th>
+               <th>Fecha de reporte</th>
+               <th>Descripción</th>
+               <th>Captura/pantalla</th> 
+               <th>Estado</th> 
+               <th>Acciones</th>  
+           </tr>
+         
+       </thead>
+       <tbody id="lista_proceso"></tbody>
+       
+    </table> 
 </div>
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -150,14 +170,102 @@
       </div>
     </div>
 
+<!-- NUEVA INCIDENCIA -->
+
+<section id="perfil_Admin" >
+    <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100 nb-auto">
+        <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
+            <h1 class="font-weight-bold mb-4">INCIDENCIAS</h1>
+            <div id="fecha_ini_tem"></div>
+            <form class="nb-5" id="form_inci" enctype="multipart/form-data" >
+               <div class="mb-4 ocl" >                   
+                    <input type="text" class="form-control" name="id_usuario" id="id_usuario">                       
+                </div> 
+                <div class="mb-4">
+                    <label for="departamento" class="form-label font-weight-bold">Departamento</label>
+                    <select  class="form-control" id="depar" required name="depar">
+                                            <option value="1">Gerencia</option>
+                                            <option value="2">Contabilidad</option>
+                                            <option value="3">Soporte</option>
+                                            <option value="4">Anasafi</option> 
+                                            <option value="4">Camarero</option>
+                    </select>                      
+                </div>
+                <div class="mb-4 ocl">
+                    <label for="fecha_ini" class="form-label font-weight-bold">Fecha de reporte</label>
+                    <input type="text" class="form-control" name="fecha_ini" id="fecha_ini" >                       
+                </div> 
+                <div class="mb-4">
+                     <textarea name="descrip" id="descrip" class="form-control " rows="10" cols="40">  <!--edito  -->
+                    </textarea>                     
+                </div>                               
+                <div class="mb-4">
+                    <label for="contra" class="form-label font-weight-bold">Tomar fotografia</label>
+                    <input type="file" class="form-control" name="foto_in" id="foto_in">
+                </div>
+                <div class="mb-4 ocl">
+                    <label for="status" class="form-label font-weight-bold">Status</label>
+                    <select  class="form-control" id="status" required name="status">
+                                            <option value="Inicio">Inicio</option>
+                                            <option value="Proceso">Proceso</option>
+                                            <option value="finalizado">Finalizado</option>                                              
+
+                    </select>                      
+                </div> 
+                <img src="" alt="">
+                <button type="submit" id="envio_inci_soporte"  class="btn btn-primary w-100">Enviar inicidencia</button>
+            </form>
+            
+        </div>
+    </div> 
+    </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">IMAGEN DE LA INCIDENCIA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>  
+<!-- Modal editar incidencia-->  
+<div class="modal fade" id="modal_inciEdit" tabindex="-1" aria-labelledby="modal_inciEditLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_inciEditLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>    
 </body>
 </html>
 <script src="../../js/para_inci_soporte.js"></script>
+<script src="../../ckfinder/ckfinder.js"></script>
 <script>
     window.onload = function(){
+    editor = CKEDITOR.replace( 'descrip' );
+    CKFinder.setupCKEditor(editor,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');    
     editor_1 = CKEDITOR.replace( 'descrip2' );
     CKFinder.setupCKEditor(editor_1,'https://www.hostalterra.com.ec/gestion/ckeditor.php/ckfinder');
-         }              
+         }     
             
 </script> 
 <script>
@@ -166,4 +274,5 @@
     month = date.getMonth() + 1;
     day = date.getDate();    
     document.getElementById("fecha_ini_ruta").value =year + "-" + month + "-" + day;
+    document.getElementById("fecha_ini").value =year + "-" + month + "-" + day;
 </script> 

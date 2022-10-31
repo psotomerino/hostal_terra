@@ -62,7 +62,9 @@ $(document).on('click','#btn_enruta',function(){
     /*$('#aside_left').hide();
     $('#cuerpo').show();*/     
 });
-    
+
+// INSERTA NUEVA INCIDENCIA
+
 $(document).on('click','#envio_inci',function (e){    
      e.preventDefault(); 
     //alert ('se detuvo el envio');
