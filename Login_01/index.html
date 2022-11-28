@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Login</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        
+        <link rel="stylesheet" href="css/para_index.css">
+      </head>
+<body>
+<?php
+    session_start();
+    if(isset($_SESSION['usuario'])){
+		if($_SESSION['usuario']['tipo_usuario']== "Admin"){
+			header('Location: main_app/admin/');            
+		}else if($_SESSION['usuario']['tipo_usuario']== "Camarero"){
+			header('Location: main_app/camarero/');            
+		}else if($_SESSION['usuario']['tipo_usuario']== "Soporte"){
+			header('Location: main_app/soporte/');
+		}else if($_SESSION['usuario']['tipo_usuario']== "Anasafi"){
+			header('Location: main_app/anasafi/');
+		}/*else if($_SESSION['usuario']['tipo_usuario']== "curricular"){
+			header('Location: /main_app/curriculares/');
+		}*/
+	}
+?>     
+    <section class="left-form">
+
+    </section>
+
+    <section class="right-form">
+        <form action="" id="formlg">	
+            <h2>HOSTAL TERRA</h2>
+            <label for="usuariolog">Usuario:</label>             
+            <input type="text" name="usuariolg" id="usuariolg" required>
+            <label for="passlg">Contraseña:</label>
+            <input type="password" name="passlg" id="passlg" pattern="[A-Za-z0-9_-]{1,15}"  required>
+            <input type="submit" id="btn-ini"value="Iniciar Sesión">
+            <a href="https://hostalterra.com/" class="txt_" >Ir a la pagina principal </a>
+                        
+        </form>
+       
+    </section>
+    
+</body>
+</html>
+<script src="js/para_login/main.js"></script> 
