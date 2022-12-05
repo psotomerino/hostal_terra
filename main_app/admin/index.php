@@ -15,6 +15,7 @@
 ?>
 <script src="../../ckeditor/ckeditor.js"></script> 
 <style>
+
     .ocl{
         display: none;
     }
@@ -55,28 +56,110 @@
         margin-left: 10px;
         
     }
+    .carbon-example.svelte-1ss3gv2.svelte-1ss3gv2.svelte-1ss3gv2 {        
+    padding: 8px;
+    background-color: #fff;
+    height: 90px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 6px;
+    border: 1px solid #e3e3e3;
+    z-index: 5;
+    
+    }
+    .avatar-md {
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-bottom: 3px;
+    }
+
+    *, :after, :before {
+    box-sizing: border-box; 
+    }
+
+    img[Attributes Style] {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    }
+    .bloque{
+        display: inline-block;
+    }
+    .svelte-1ss3gv2 {
+    list-style: none;
+    margin: 0!important;
+    padding: 0 10px!important;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    font-size: 12px; 
+    }
+
+    .cuerpo{
+        height: 100vh;
+        width: 100%;
+        background-color: #ecebea; 
+        overflow: hidden
+        
+          
+    }
+    #home{
+        margin-left: 30px;
+    }
+
 
 </style> 
 <body>
     <section>
     <?php include '../menu_superior.php' ?>
-    <div id="ini_base">
+    <!-- <div id="ini_base">
     <button id="ini_" class="btn btn-warning">Incio</button>    
-    </div>
+    </div> -->
     
     </section>
-    <div class="grid-container g-0" id="home">
-      <div class="grid-item" id="btn_misinsi" ><p><img src="../../imagenes/mis_inci.png" class="img_" alt=""></p><p>MIS INCIDENCIAS</p></div>
-      <div class="grid-item" id="btn_insi"><p><img src="../../imagenes/incidencia.png" class="img_" alt=""></p><p>NUEVA INCIDENCIA</p></div>
-      <div class=""></div>
-      <div class=""></div>
+    <div class="row cuerpo g-0">
+    <div class="grid-container" id="home">
+    <!--<div class="grid-item" id="btn_liq_mantenimiento" ><p><img src="../../imagenes/.png" class="img_" alt=""></p><p>MANTENIMIENTO</p></div>    
+        <div class="grid-item" id="btn_crtl_incidencias" ><p><img src="../../imagenes/.png" class="img_" alt=""></p><p>INCIDENCIAS</p></div> 
+        <div class="grid-item" id="btn_misinsi" ><p><img src="../../imagenes/mis_inci.png" class="img_" alt=""></p><p>MIS INCIDENCIAS</p></div>
+        <div class="grid-item" id="btn_insi"><p><img src="../../imagenes/incidencia.png" class="img_" alt=""></p><p>NUEVA INCIDENCIA</p></div> -->
+
+      <div class="grid-item ">
+        <div class="carbon-example flex-wrapper action-menu-entry svelte-1ss3gv2"> 
+            <div class="grid-container_box">
+            <img src="../../imagenes/mis_inci.png" class="avatar-md iconosga "> 
+            <h4 class="mt-3" style="font-size: 14px;">Liquidación Mantenimiento</h4> 
+            </div> 
+        </div> 
+      </div>
+
+      <div class="grid-item ">
+        <div class="carbon-example flex-wrapper action-menu-entry svelte-1ss3gv2"> 
+            <div class="grid-container_box">
+            <img src="../../imagenes/incidencia.png" class="avatar-md iconosga "> 
+            <h4 class="mt-3" style="font-size: 14px;">Reporte incidencias</h4> 
+            </div> 
+        </div> 
+      </div>
+
       <div class=""></div>
       <div class=""></div>
       <div class=""></div>
       <div class=""></div>
 
     </div>
-
+    </div>
    <div class="contenedor mt-4"> 
    <div class="sele">
         <select name="status_R" id="status_R" class ="selector"> 

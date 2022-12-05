@@ -5,10 +5,18 @@
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
         grid-column-gap:  15px;
-        grid-row-gap: 15px;
-       
+        grid-row-gap: 15px;     
         
     }
+.grid-container_box{
+      
+        width: 95%;   
+        display: grid;
+        grid-template-columns: 25% 75%; 
+        grid-column-gap:  3px;
+        grid-row-gap: 3px;
+
+}
 .grid-item { 
     /*background-color:#F2F3F4;*/
     padding: 2px;
